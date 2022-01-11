@@ -1,10 +1,24 @@
-import React from 'react';
-import {ReactComponent as GithubIcon} from './assets/img/github.svg.svg'; // importando imagem 
-import Navbar from './components/Navbar';
+import { 
+  BrowserRouter, // componentes para configurar as rotas 
+  Routes,
+  Route
+} from "react-router-dom";
+import Listing from 'pages/Listing';
+import Form from 'pages/Form';
+import Navbar from "components/Navbar";
+//Config de rotas
 
-function App() {
+function App() { // BrowserRouter Iniciar a configuração das rotas 
   return (
-    <Navbar/>
+    <BrowserRouter> 
+      <Navbar />
+      <Routes> 
+        <Route path="/" element={<Listing />} />
+        <Route path="/form">
+          <Route path=":movieId" element={<Form />} /> 
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
