@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 
 
-ReactDOM.render(
+ReactDOM.render( //chama
   <React.StrictMode>
     <App />
   </React.StrictMode>,
